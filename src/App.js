@@ -51,7 +51,7 @@ function App() {
 
     
     try {
-      const res = await axios.post('http://localhost:8000/', formData);
+      const res = await axios.post('https://lanndetector-backend.onrender.com/predict', formData);
       setResults(res.data.results);
     } catch (err) {
       console.error("API error:", err);
