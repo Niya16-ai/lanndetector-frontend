@@ -3,6 +3,26 @@ import axios from 'axios';
 
 import { useRef, useEffect } from 'react';
 
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+const handleUpload = async (e) => {
+  const files = Array.from(e.target.files);
+  const formData = new FormData();
+  files.forEach(file => formData.append('files', file));
+
+  try {
+    const res = await axios.post(`${backendUrl}/predict`, formData);
+    console.log(res.data);
+  } catch (err) {
+    console.error("API error:", err);
+  }
+};
+
+
+
+
+
 function ImageWithBoxes({ image, detections }) {
   const canvasRef = useRef(null);
 
