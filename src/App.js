@@ -4,23 +4,6 @@ import axios from 'axios';
 import { useRef, useEffect } from 'react';
 
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
-
-const handleUpload = async (e) => {
-  const files = Array.from(e.target.files);
-  const formData = new FormData();
-  files.forEach(file => formData.append('files', file));
-
-  try {
-    const res = await axios.post(`${backendUrl}/predict`, formData);
-    console.log(res.data);
-  } catch (err) {
-    console.error("API error:", err);
-  }
-};
-
-
-
 
 
 function ImageWithBoxes({ image, detections }) {
@@ -68,11 +51,29 @@ function App() {
     files.forEach(file => formData.append('files', file));
 
     try {
+      // อ่านค่า backend URL จาก .env (ต้องตั้งค่าใน Vercel ด้วย)
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+      console.log("Backend URL:", backendUrl); // Debug ดูว่า URL ถูกต้องไหม
+
+      // ส่งไฟล์ไปยัง FastAPI backend
+      const res = await axios.post(`${backendUrl}/predict`, formData);
+
+      // เก็บผลลัพธ์ JSON ที่ backend ส่งกลับมา
+      setResult(res.data);
+    } catch (err) {
+      // ถ้ามี error จะโชว์ใน console
+      console.error("API error:", err);
+    }
+
+
+       /* อันเก่า
+    try {
       const res = await axios.post('http://localhost:8000/predict', formData);
       setResults(res.data.results);
     } catch (err) {
       console.error("API error:", err);
     }
+       */
   };
 
   return (
