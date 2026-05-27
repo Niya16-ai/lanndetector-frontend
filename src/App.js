@@ -58,7 +58,7 @@ function App() {
       const res = await axios.post(`${backendUrl}/predict`, formData);
 
       // เก็บผลลัพธ์ JSON ที่ backend ส่งกลับมา
-      setResult(res.data);
+      setResults(res.data.results);
     } catch (err) {
       // ถ้ามี error จะโชว์ใน console
       console.error("API error:", err);
