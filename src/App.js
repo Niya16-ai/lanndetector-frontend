@@ -51,7 +51,7 @@ function App() {
 
     
     try {
-      const res = await axios.post('http://localhost:8000/predict', formData);
+      const res = await axios.post('http://localhost:8000/', formData);
       setResults(res.data.results);
     } catch (err) {
       console.error("API error:", err);
