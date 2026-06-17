@@ -169,11 +169,7 @@ function App() {
           <p>DETECTOR</p>
         </div>
 
-        <div className="menu">
-          <a href="/"></a>
-          <a href="/"></a>
-          <a href="/"></a>
-        </div>
+        
       </nav>
 
       {/* HERO */}
@@ -204,24 +200,7 @@ function App() {
             สำหรับการวิจัยและอนุรักษ์วัฒนธรรมล้านนา
           </p>
 
-          <div className="feature-row">
-
-            <div className="feature-item">
-              <h4></h4>
-              <p></p>
-            </div>
-
-            <div className="feature-item">
-              <h4></h4>
-              <p></p>
-            </div>
-
-            <div className="feature-item">
-              <h4></h4>
-              <p></p>
-            </div>
-
-          </div>
+          
 
           <div className="hero-buttons">
             <button
@@ -419,11 +398,7 @@ function App() {
             </p>
           </div>
 
-          <div>
-            <h3></h3>
-            <p></p>
-            <p></p>            
-          </div>
+          
 
           
 
