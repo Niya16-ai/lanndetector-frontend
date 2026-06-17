@@ -2,56 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
-
-// 1. นิยาม Object จับคู่ตัวอักษร
-const charMapping = {
-
-"ch_0": "ก",
-"ch_1": "ข",
-"ch_2": "ฃ",
-"ch_3": "ค",
-"ch_4": "ฅ",
-"ch_5": "ฆ",
-"ch_6": "ง",
-"ch_7": "จ",
-"ch_8": "ฉ",
-"ch_9": "ช",
-"ch_10": "ซ",
-"ch_11": "ฌ",
-"ch_12": "ญ",
-"ch_13": "ฎ",
-"ch_14": "ฏ",
-"ch_15": "ฐ",
-"ch_16": "ฑ",
-"ch_17": "ฒ",
-"ch_18": "ณ",
-"ch_19": "ด",
-"ch_20": "ต",
-"ch_21": "ถ",
-"ch_22": "ท",
-"ch_23": "ธ",
-"ch_24": "น",
-"ch_25": "บ",
-"ch_26": "ป",
-"ch_27": "ผ",
-"ch_28": "ฝ",
-"ch_29": "พ",
-"ch_30": "ฟ",
-"ch_31": "ภ",
-"ch_32": "ม",
-"ch_33": "ย",
-"ch_34": "ร",
-"ch_35": "ล",
-"ch_36": "ว",
-"ch_37": "ศ",
-"ch_38": "ษ",
-"ch_39": "ส",
-"ch_40": "ห",
-"ch_41": "ฬ",
-"ch_42": "อ"
-    
-};
-
 function ImageWithBoxes({ image, detections }) {
   const canvasRef = useRef(null);
 
@@ -78,16 +28,16 @@ function ImageWithBoxes({ image, detections }) {
         ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
 
         ctx.fillStyle = "#c62828";
-        ctx.font = "20px Arial";
-        const labelText = charMapping[det.label] || det.label;
-        //ctx.fillText(labelText, x1 + 5, y1 - 10);
+        ctx.font = "18px Arial";
+
+        ctx.fillText(det.label, x1 + 5, y1 - 10);
 
         ctx.fillStyle = "#1565c0";
         ctx.fillText(
-          `${labelText +" "+ (det.confidence * 100).toFixed(1)}%`, x1 + 5, y1 - 3
-          //`${(det.confidence * 100).toFixed(1)}%`, x1 + 5, y1 - 35
-          );
-        
+          `${(det.confidence * 100).toFixed(1)}%`,
+          x1 + 5,
+          y1 - 35
+        );
       });
     };
   }, [image, detections]);
@@ -170,9 +120,9 @@ function App() {
         </div>
 
         <div className="menu">
-          <a href="/"></a>
-          <a href="/"></a>
-          <a href="/"></a>
+          <a href="/">หน้าแรก</a>
+          <a href="/">เกี่ยวกับเรา</a>
+          <a href="/">เอกสาร</a>
         </div>
       </nav>
 
@@ -207,18 +157,18 @@ function App() {
           <div className="feature-row">
 
             <div className="feature-item">
-              <h4></h4>
-              <p></p>
+              <h4>🎯</h4>
+              <p>แม่นยำ</p>
             </div>
 
             <div className="feature-item">
-              <h4></h4>
-              <p></p>
+              <h4>⚡</h4>
+              <p>รวดเร็ว</p>
             </div>
 
             <div className="feature-item">
-              <h4></h4>
-              <p></p>
+              <h4>🛡️</h4>
+              <p>ปลอดภัย</p>
             </div>
 
           </div>
@@ -339,7 +289,6 @@ function App() {
                           marginBottom: "12px",
                         }}
                       >
-                        {/*
                         <strong>
                           คลาส:
                         </strong>{" "}
@@ -348,7 +297,6 @@ function App() {
                           100
                         ).toFixed(2)}%)
                         <br />
-                        */}
                         
                       </div>
                     )
@@ -367,7 +315,8 @@ function App() {
 
       <section className="why">
 
-        <h2>        
+        <h2>
+          ทำไมต้องใช้ระบบของเรา
         </h2>
 
         <div className="cards">
@@ -377,7 +326,7 @@ function App() {
 
             <p>
               ใช้โมเดลตรวจจับ
-              อักษรล้านนา
+              อักษรล้านนาโดยเฉพาะ
             </p>
           </div>
 
@@ -385,7 +334,8 @@ function App() {
             <h3>Bounding Box</h3>
 
             <p>
-              แสดงตำแหน่งตัวอักษร              
+              แสดงตำแหน่งตัวอักษร
+              อย่างแม่นยำ
             </p>
           </div>
 
@@ -420,15 +370,25 @@ function App() {
           </div>
 
           <div>
-            <h3></h3>
-            <p></p>
-            <p></p>            
+            <h3>เมนู</h3>
+
+            <p>หน้าแรก</p>
+            <p>เกี่ยวกับเรา</p>
+            <p>เอกสาร</p>
           </div>
 
-          
+          <div>
+            <h3>เทคโนโลยี</h3>
+
+            <p>YOLOv8</p>
+            <p>React</p>
+            <p>FastAPI</p>
+          </div>
 
         </div>
+
       </footer>
+
     </div>
   );
 }
