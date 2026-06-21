@@ -32,12 +32,12 @@
 /* HERO */
 
 .hero {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: auto;
   padding: 20px 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -219,8 +219,8 @@
 
 .footer-grid-2 {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
+  grid-template-columns: repeat(4,1fr);
+  gap: 5px;
   justify-items: end;
   
  
