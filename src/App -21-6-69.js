@@ -1,66 +1,54 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import logo1 from "./img/logo1.png";
-import logo2 from "./img/logo2.png";
-import logo3 from "./img/logo3.png";
-import logo4 from "./img/logo4.png";
-import logo5 from "./img/logo5.png";
-import book1 from "./img/book1.jpg";
-import book2 from "./img/book2.jpg";
-import book3 from "./img/book3.jpg";
-import book4 from "./img/book4.jpg";
-import PicFile from "./img/PicFile.png";
-
-
 
 
 // 1. นิยาม Object จับคู่ตัวอักษร
 const charMapping = {
 
-"ch_0": "กะ",
-"ch_1": "ขะ",
-"ch_2": "ฃะ",
-"ch_3": "ก๊ะ",
-"ch_4": "ฅะ",
-"ch_5": "ฆะ",
-"ch_6": "งะ",
-"ch_7": "จะ",
-"ch_8": "ฉะ",
-"ch_9": "จ๊ะ",
-"ch_10": "ซะ",
-"ch_11": "ฌะ",
-"ch_12": "ญะ",
-"ch_13": "ระดะ",
-"ch_14": "ระฏะ",
-"ch_15": "ระฐะ",
-"ch_16": "ระฒะ",
-"ch_17": "ระณะ",
-"ch_18": "ตะ",
-"ch_19": "ถะ",
-"ch_20": "ทะ",
-"ch_21": "ธะ",
-"ch_22": "นะ",
-"ch_23": "บะ",
-"ch_24": "ปะ",
-"ch_25": "ผะ",
-"ch_26": "ฝะ",
-"ch_27": "ป๊ะ",
-"ch_28": "ฟะ",
-"ch_29": "ภะ",
-"ch_30": "มะ",
-"ch_31": "ยะ",
-"ch_32": "ระ",
-"ch_33": "ละ",
-"ch_34": "วะ",
-"ch_35": "ศะ",
-"ch_36": "ษะ",
-"ch_37": "สะ",
-"ch_38": "หะ",
-"ch_39": "ฬะ",
-"ch_40": "อะ",
-"ch_41": "ฮะ",
-"ch_42": "อยะ"
+"ch_0": "ก",
+"ch_1": "ข",
+"ch_2": "ฃ",
+"ch_3": "ค",
+"ch_4": "ฅ",
+"ch_5": "ฆ",
+"ch_6": "ง",
+"ch_7": "จ",
+"ch_8": "ฉ",
+"ch_9": "ช",
+"ch_10": "ซ",
+"ch_11": "ฌ",
+"ch_12": "ญ",
+"ch_13": "ฎ",
+"ch_14": "ฏ",
+"ch_15": "ฐ",
+"ch_16": "ฑ",
+"ch_17": "ฒ",
+"ch_18": "ณ",
+"ch_19": "ด",
+"ch_20": "ต",
+"ch_21": "ถ",
+"ch_22": "ท",
+"ch_23": "ธ",
+"ch_24": "น",
+"ch_25": "บ",
+"ch_26": "ป",
+"ch_27": "ผ",
+"ch_28": "ฝ",
+"ch_29": "พ",
+"ch_30": "ฟ",
+"ch_31": "ภ",
+"ch_32": "ม",
+"ch_33": "ย",
+"ch_34": "ร",
+"ch_35": "ล",
+"ch_36": "ว",
+"ch_37": "ศ",
+"ch_38": "ษ",
+"ch_39": "ส",
+"ch_40": "ห",
+"ch_41": "ฬ",
+"ch_42": "อ"
     
 };
 
@@ -190,13 +178,10 @@ function App() {
         {/* LEFT */}
         <div>
             <div className="hero-title">
-             <div>
-                <img src={logo1} alt="logo1" width={100}/>
-                <img src={logo2} alt="logo2" width={250}/>
-            </div>
             <div className="thai">
               เรียน ล้านนา
             </div>
+
             <div className="eng">
               Learn Lanna
             </div>
@@ -207,6 +192,24 @@ function App() {
           </p>
 
           
+
+          <div className="hero-buttons">
+            <button
+              className="btn-primary"
+              onClick={() =>
+                document.getElementById("uploadInput").click()
+              }
+            >
+              เริ่มการตรวจจับ
+            </button>
+
+            <button
+              className="btn-outline"
+              onClick={downloadJson}
+            >
+              ดาวน์โหลด JSON
+            </button>
+          </div>
         </div>
 
         {/* RIGHT */}
@@ -215,12 +218,17 @@ function App() {
 
           <div className="dropzone">
 
-            <div style={{ fontSize: "50px" }}>
-            <img src={PicFile} alt="PicFile" width={200}/>
+            <div style={{ fontSize: "70px" }}>
+              ☁️
             </div>
 
-            <h2>คลิกเพื่อเลือกไฟล์</h2>
+            <h2>ลากไฟล์มาวางที่นี่</h2>
             
+
+            <p>
+              หรือคลิกเพื่อเลือกไฟล์
+            </p>
+
             <input
               id="uploadInput"
               type="file"
@@ -235,7 +243,7 @@ function App() {
                 document.getElementById("uploadInput").click()
               }
             >
-              เริ่มการตรวจจับ
+              เลือกไฟล์
             </button>
 
             <p>
@@ -335,20 +343,30 @@ function App() {
         <div className="cards">
 
           <div className="card">
-            <h3>หนังสือฝึกอ่าน ภาษาล้านนา</h3>
-            <p>            
-              ขอบคุณแหล่งอ้างอิง คุณสามารถกดที่รูปหนังสือเพื่อไป Link หนังสือนั้น 
+            <h3>YOLOv8</h3>
+
+            <p>
+              ใช้โมเดลตรวจจับ
+              อักษรล้านนา
             </p>
           </div>
-          <div className="cards_2">
-            <a href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/Lanna-Tham-Script-Revised-Edition-2026.pdf"  target="_blank"><img src={book1} alt="book1" width={250}/></a>
-            <a href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/Textbook-thamma-lanna-alphabet.pdf"  target="_blank"><img src={book2} alt="book2" width={250}/></a>
-            <a href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/tham-lanna-reading-practice-2.pdf"  target="_blank"><img src={book3} alt="book3" width={250}/></a>
-            <a href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/textbook-lanna-vowel-1.pdf"  target="_blank"><img src={book4} alt="book4" width={250}/></a>
-              
-          </div>  
 
-          
+          <div className="card">
+            <h3>Bounding Box</h3>
+
+            <p>
+              แสดงตำแหน่งตัวอักษร              
+            </p>
+          </div>
+
+          <div className="card">
+            <h3>Confidence</h3>
+
+            <p>
+              แสดงค่าความเชื่อมั่น
+              ของโมเดล
+            </p>
+          </div>
 
         </div>
 
@@ -358,34 +376,17 @@ function App() {
 
       <footer className="footer">
 
-        <h3>
-          โครงการวิจัยจากงบประมาณรายได้ของมหาวิทยาลัยนเรศวร ประจำปี 2568
-        </h3>
-
         <div className="footer-grid">
 
           <div>
-            <p>           
-              โครงการนวัตกรรมเพื่อการเรียนรู้อักษรโบราณ: ดิจิทัลแพลตฟอร์มปัญญาประดิษฐ์ 
-            </p>
-            <p>
-              เพื่อการระบุตำแหน่งและการจำแนกอักษรล้านนาในภาคเหนือของประเทศไทย
-            </p>          
-            <p>
-            * หัวหน้าโครงการวิจัย 
-            ดร.สุทธิพจน์ พีรณวงษ์
-            </p>
-            <p>
-            ** ผู้ร่วมโครงการิจัย 
-            ผศ. ดร.พิศิษฐ์ นาคใจ, ผศ. ดร.พัชรี มณีรัตน์ และ ดร.นิยดา รักวงษ์
-            </p>
-          </div>
+            <h3>
+              อักษรล้านนา Detector
+            </h3>
 
-          <div className="footer-grid-2">
-                <img src={logo4} alt="logo4" width={100}/>
-                <img src={logo5} alt="logo5" width={100}/>
-                <img src={logo3} alt="logo3" width={80}/>
-
+            <p>
+              ระบบตรวจจับอักษรล้านนา
+              ด้วย YOLOv8
+            </p>
           </div>
 
           
