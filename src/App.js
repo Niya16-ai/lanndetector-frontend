@@ -315,8 +315,7 @@ function App() {
 
         <div className="cards">
           <h1>หนังสือฝึกอ่าน ภาษาล้านนา</h1>
-          <div className="cards">
-                  
+                                
           <h3>ขอบคุณแหล่งอ้างอิง คุณสามารถกดที่รูปหนังสือเพื่อไป Link หนังสือนั้น </h3>
             
           </div>
@@ -354,7 +353,6 @@ function App() {
 
           
 
-        </div>
 
       </section>
 
