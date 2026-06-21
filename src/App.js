@@ -156,6 +156,14 @@ function App() {
 
       {/* NAVBAR */}
 
+      <nav className="navbar">
+        <div className="logo">
+          <h1>เรียน ล้านนา</h1>
+          <p>Learn Lanna</p>
+        </div>
+
+        
+      </nav>
 
       {/* HERO */}
 
@@ -167,12 +175,7 @@ function App() {
                 <img src={logo1} alt="logo1" width={100}/>
                 <img src={logo2} alt="logo2" width={250}/>
             </div>
-            <div className="thai">
-              เรียน ล้านนา
-            </div>
-            <div className="eng">
-              Learn Lanna
-            </div>
+           
           </div>
 
           <p className="hero-desc">
