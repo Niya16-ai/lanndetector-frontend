@@ -148,16 +148,8 @@ function App() {
     setLoading(false);
   };
 
-  
-
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-
-    a.href = url;
-    a.download = "lanna_detection_results.json";
-    a.click();
-  };
+      
+ 
 
   return (
     <div className="page">
@@ -340,24 +332,24 @@ function App() {
             <a 
               href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/Textbook-thamma-lanna-alphabet.pdf"  
               target="_blank"
-               rel="noopener noreferrer"
+              rel="noopener noreferrer"
             >
             <img src={book2} alt="book2" width={250}/>
             </a>
             <a 
               href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/tham-lanna-reading-practice-2.pdf"  
               target="_blank"
-               rel="noopener noreferrer"
+              rel="noopener noreferrer"
             >
             <img src={book3} alt="book3" width={250}/>
             </a>
             <a 
               href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/textbook-lanna-vowel-1.pdf"  
               target="_blank"
-               rel="noopener noreferrer"
+              rel="noopener noreferrer"
             >
             <img src={book4} alt="book4" width={250}/>
-          </a>
+            </a>
               
           </div>  
 
