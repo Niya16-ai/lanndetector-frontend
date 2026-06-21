@@ -327,28 +327,28 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={book1} alt="book1" width={250}/>
+            <img src={book1} alt="book1" className="book-img"/>
             </a>
             <a 
               href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/Textbook-thamma-lanna-alphabet.pdf"  
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={book2} alt="book2" width={250}/>
+            <img src={book2} alt="book2" className="book-img"/>
             </a>
             <a 
               href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/tham-lanna-reading-practice-2.pdf"  
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={book3} alt="book3" width={250}/>
+            <img src={book3} alt="book3" className="book-img"/>
             </a>
             <a 
               href="https://www.culture.cmru.ac.th/web/wp-content/uploads/2024/03/textbook-lanna-vowel-1.pdf"  
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={book4} alt="book4" width={250}/>
+            <img src={book4} alt="book4" className="book-img"/>
             </a>
               
           </div>  
