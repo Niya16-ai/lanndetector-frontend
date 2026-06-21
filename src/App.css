@@ -273,13 +273,7 @@
     grid-template-columns: 1fr;
   }
 
-  .hero-title .thai {
-    font-size: 48px;
-  }
-
-  .hero-title .eng {
-    font-size: 60px;
-  }
+  
 
   .cards {
     grid-template-columns: 1fr;
