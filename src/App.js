@@ -148,18 +148,7 @@ function App() {
     setLoading(false);
   };
 
-  const downloadJson = () => {
-    if (!results.length) {
-      alert("ยังไม่มีผลลัพธ์");
-      return;
-    }
-
-    const blob = new Blob(
-      [JSON.stringify(results, null, 2)],
-      {
-        type: "application/json",
-      }
-    );
+  
 
     const url = URL.createObjectURL(blob);
 
