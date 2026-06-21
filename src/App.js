@@ -305,9 +305,6 @@ function App() {
 
       <section className="why">
 
-        <h2>        
-        </h2>
-
         <div className="cards">
           <h1>
           หนังสือฝึกอ่านภาษาล้านนา 
