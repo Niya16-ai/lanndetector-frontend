@@ -156,14 +156,6 @@ function App() {
 
       {/* NAVBAR */}
 
-      <nav className="navbar">
-        <div className="logo">
-          <h1>เรียน ล้านนา</h1>
-          <p>Learn Lanna</p>
-        </div>
-
-        
-      </nav>
 
       {/* HERO */}
 
@@ -316,7 +308,7 @@ function App() {
         <div className="cards">
           <h1>หนังสือฝึกอ่าน ภาษาล้านนา</h1>
                                 
-          <h3>ขอบคุณแหล่งอ้างอิง คุณสามารถกดที่รูปหนังสือเพื่อไป Link หนังสือนั้น </h3>
+          <h3>สามารถกดที่รูปหนังสือแต่ละเล่มเพื่อฝึกอ่าน </h3>
             
           </div>
           <div className="cards_2">
