@@ -181,29 +181,45 @@
 }
 
 .cards_2 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
+  gap: 15px;
   background: white;
   border-radius: 25px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.05);
+  padding: 40px;
+  justify-content: center;
 }
 
+/* รูปหนังสือ */
 .book-img {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 220px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-@media (max-width: 900px) {
+.book-img:hover {
+  transform: scale(1.05);
+}
 
+/* มือถือ */
+@media (max-width: 768px) {
   .cards_2 {
-    grid-template-columns: 1fr;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .cards_2 a {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: center;
   }
 
   .book-img {
-    max-width: 100%;
+    width: 80%;
+    max-width: 280px;
   }
 }
 
